@@ -1,0 +1,30 @@
+function Decoder(bytes, port) {
+  var raw_state = bytes[0].toString(16).toUpperCase();
+  var state = "Unknown";
+  if (raw_state === "A1") {
+    state = "Not Connected";
+  }  else if (raw_state === "B1") {
+    state = "Connected and Locked";
+  }  else if (raw_state === "C2") {
+    state = "Charging";
+  }  else if (raw_state === "C3") {
+    state = "Charging";
+  }  else if (raw_state === "C4") {
+    state = "Charging";
+  }  else if (raw_state === "B2") {
+    state = "Charged";
+  }  else if (raw_state === "E2") {
+    state = "E2 Mode";
+  }  else if (raw_state === "E0") {
+    state = "Outlet Locked";
+  }  else if (raw_state === "AA") {
+    state = "Lock Outlet ACK";
+  }  else if (raw_state === "BB") {
+    state = "Unlock Outlet ACK";
+  }  else if (raw_state === "CC") {
+    state = "Reset Charger ACK";
+  }
+  return{
+    state: state
+  };
+}

@@ -1,0 +1,9 @@
+function Encoder(object, port) {
+  if (object.mode === "Lock Outlet") {
+    return [1];
+  }  else if (object.mode === "Unlock Outlet") {
+      return [2];
+  }  else if (object.mode === "Reset Charger") {
+      return [3]
+    }
+  }
