@@ -29,17 +29,19 @@ The system has the following control functions (* See above note about command t
 
 1. "Reset Charger": It's found that this can be used to commence EV charging when the charger is in the "Connected and Locked" state - even if the charger's key switch is still in the locked state.
 
-2. "Lock Outlet": Places the charger in an error mode and interrupts the charging process. This shoukdn't be necessary because the EV will stop the charging process when the desired charge level is met.
+2. "Lock Outlet": Places the charger in an error mode and interrupts the charging process. This shouldn't be necessary because the EV will stop the charging process when the desired charge level is met.
 
 3. "Unlock Outlet": Takes the charger out of error mode
 
 ACKs are uplinked via TTN when each control command has been received.
 
+Thecharger states can be monitored and charger commands sent using the Apple Home App and [Home Manager](https://github.com/roscoe81/Home-Manager) 
+
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Acknowledgements
-The project has been developed by exploring some of the charger interworking functionality documented in https://github.com/cvvmedia/symcon.cvvmedia.ablchargepoint. The outcome, combined with my additional protocol analysis is [here](https://github.com/roscoe81/ev-charger-monitor/blob/main/Documentation/Charger%20Protocol.pdf).
+The project has been developed after exploring some of the charger interworking functionality documented in https://github.com/cvvmedia/symcon.cvvmedia.ablchargepoint. The outcome, combined with my additional protocol analysis is [here](https://github.com/roscoe81/ev-charger-monitor/blob/main/Documentation/Charger%20Protocol.pdf).
 
 
 
