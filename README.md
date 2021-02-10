@@ -29,11 +29,11 @@ The system has the following control functions (* See above note about command t
 
 1. "Reset Charger": It's found that this can be used to commence EV charging when the charger is in the "Connected and Locked" state - even if the charger's key switch is still in the locked state.
 
-2. "Lock Outlet": Places the charger in an error mode and interrupts the charging process. This shoukdn't be necessary becaus3 the EV will stop the charging process when the desired charge level is met.
+2. "Lock Outlet": Places the charger in an error mode and interrupts the charging process. This shoukdn't be necessary because the EV will stop the charging process when the desired charge level is met.
 
 3. "Unlock Outlet": Takes the charger out of error mode
 
-ACKs are uplinked via TTN wwhen each control command has been received.
+ACKs are uplinked via TTN when each control command has been received.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
