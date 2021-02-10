@@ -35,7 +35,7 @@ The system has the following control functions (* See above note about command t
 
 ACKs are uplinked via TTN when each control command has been received.
 
-Thecharger states can be monitored and charger commands sent using the Apple Home App and [Home Manager](https://github.com/roscoe81/Home-Manager) 
+The charger states can be monitored and charger commands can be sent by using the Apple Home [App](https://github.com/roscoe81/ev-charger-monitor/blob/main/Photos/IMG_5273.PNG) and [Home Manager](https://github.com/roscoe81/Home-Manager). They can also be used to schedule charging using an Apple Home App Automation.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
