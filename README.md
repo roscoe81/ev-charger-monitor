@@ -39,7 +39,7 @@ ACKs are uplinked via TTN when each control command has been received.
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Acknowledgements
-The project has used some of the charger interworking functionality in https://github.com/cvvmedia/symcon.cvvmedia.ablchargepoint. That functionality, combined with my additional protocol analyis is [here](https://github.com/roscoe81/ev-charger-monitor/blob/main/Documentation/Charger%20Protocol.pdf).
+The project has been developed by exploring some of the charger interworking functionality documented in https://github.com/cvvmedia/symcon.cvvmedia.ablchargepoint. The outcome, combined with my additional protocol analyis is [here](https://github.com/roscoe81/ev-charger-monitor/blob/main/Documentation/Charger%20Protocol.pdf).
 
 
 
