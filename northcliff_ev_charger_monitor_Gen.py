@@ -229,7 +229,7 @@ def send_control_command(arg): # Used to test handling of received commands
     uart_flow.value(0) # Set UART to receive
     comms_led.value(1)
 
-print("Northcliff EV Charger Monitor Gen V1.1")
+print("Northcliff EV Charger Monitor Gen V1.3")
 # Set up TTN Access
 ttn_app_eui = '<Your TTN App EUI>'
 ttn_app_key = '<Your TTN App Key>'
@@ -300,9 +300,9 @@ if message_valid:
                         else:
                             remaining_cycles = 20 - new_message_counter
                         print("Cycles until Message Capture:", remaining_cycles)
-                elif (charger_state == b'B1' and heartbeat_counter >= 280 or charger_state == b'A1' and heartbeat_counter >= 716 or
-                 charger_state != b'A1' and charger_state != b'B1' and heartbeat_counter >= 3580):
-                    # Process old messages every 5 minutes if in "Connected and Locked" state and every hour in other states. That allows the ability to receive timely downlink TTN commands.
+                elif ((charger_state == b'B1' or charger_state == b'E0') and heartbeat_counter >= 280 or charger_state == b'A1' and heartbeat_counter >= 716 or
+                 charger_state != b'A1' and charger_state != b'B1' and charger_state != b'E0' and heartbeat_counter >= 3580):
+                    # Process old messages every 5 minutes if in "Connected and Locked" or "Outlet Locked" state and every hour in other states. That allows the ability to receive timely downlink TTN commands.
                     send_uplink = True
                 else:
                     # Don't send uplinks in other cases
@@ -310,7 +310,7 @@ if message_valid:
                     heartbeat_counter +=1
                     if charger_state == b'A1':
                         remaining_cycles = 716 - heartbeat_counter
-                    elif charger_state == b'B1':
+                    elif charger_state == b'B1' or charger_state == b'E0':
                         remaining_cycles = 280 - heartbeat_counter
                     else:
                         remaining_cycles = 3580 - heartbeat_counter
