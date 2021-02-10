@@ -2,7 +2,7 @@
 Remotely monitors and controls a Mercedes-Benz Wallbox Home EV Charger via The Things Network(TTN) LoRaWAN. It can be used to reduce EV running costs by automatically starting and monitoring EV charging during times when off-peak electricity rates are in place and where the EV does not support time-based charging triggers.
 
 ## System Overview
-![System Overview](https://github.com/roscoe81/ev-charger-monitor/blob/main/Documentation/Northcliff%20EV%20Charger%20Monitor%20Overview.png).
+![System Overview]https://github.com/roscoe81/ev-charger-monitor/blob/main/Documentation/Northcliff%20EV%20Charger%20Monitor%20Overview%20Gen.png).
 
 This monitor allows [Home Manager](https://github.com/roscoe81/Home-Manager) to interwork with an EV charger over LoRaWAN via The Things Network. It can monitor the state of the EV charger, as well as performing lock outlet, unlock outlet and reset charger commands using the EV charger's Modbus RS485 interface (* See note about downlink command timing). The Things Network is used to support charger locations that aren't able to provide wifi coverage (e.g. in a basement garage). It requires customised TTN payload formats that can be found [here](https://github.com/roscoe81/ev-charger-monitor/tree/main/TTN%20Payload%20Formats) and the setup of a mosquitto bridge on the Home Manager side of the system.
 
@@ -12,7 +12,7 @@ This monitor allows [Home Manager](https://github.com/roscoe81/Home-Manager) to 
 ![Hardware](https://github.com/roscoe81/ev-charger-monitor/blob/main/Photos/IMG_5237.jpg)
 The [monitor](https://github.com/roscoe81/ev-charger-monitor/tree/main/Photos) uses a Pycom LoPy4, Pycom Expansion Board 3.0 and a Sparkfun BOB-10124 Transceiver Breakout for RS485 Modbus communications(P3 to RX-1, P4 to TX-0 and P8 to RTS)
 
-**Be aware that this project should only be constructed and deployed by a licenced electrician and its use might void charger and vehicle warranties. See LICENCE.md for disclaimers.**
+**This project should only be constructed and deployed by a licenced electrician and its use might void charger and vehicle warranties. See LICENCE.md for disclaimers.**
 
 ## Operation
 The system can sense the following charger states:
