@@ -21,7 +21,7 @@ The system can sense the following charger states:
 
 2. "Connected and Locked": The EV is connected to the charger and the key switch on the charger has not been turned to start charging
 
-3. "Charging"; The charger is charging the EV battery
+3. "Charging": The charger is charging the EV battery
 
 4. "Charged": The EV is charged to the required level. This state is normally triggered by the EV advising the charger.
 
