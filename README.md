@@ -1,5 +1,5 @@
 # ev-charger-monitor
-Remotely monitors and controls a Mercedes-Benz Wallbox Home EV Charger via The Things Network(TTN) LoRaWAN. It can be used to reduce EV running costs by automatically starting and monitoring EV charging during times when off-peak electricity rates are in place and where the EV does not support time-based charging triggers.
+Remotely monitors and controls a Mercedes-Benz Wallbox Home EV Charger via The Things Network(TTN) LoRaWAN. It can be used to reduce EV running costs by scheduling EV charging when off-peak electricity rates are in place and where the EV does not support time-based charging triggers.
 
 ## System Overview
 ![System Overview](https://github.com/roscoe81/ev-charger-monitor/blob/main/Documentation/Northcliff%20EV%20Charger%20Monitor%20Overview%20Gen.png).
