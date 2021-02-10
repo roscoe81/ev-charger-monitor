@@ -229,7 +229,7 @@ def send_control_command(arg): # Used to test handling of received commands
     uart_flow.value(0) # Set UART to receive
     comms_led.value(1)
 
-print("Northcliff EV Charger Monitor Gen V1.3")
+print("Northcliff EV Charger Monitor Gen V1.4")
 # Set up TTN Access
 ttn_app_eui = '<Your TTN App EUI>'
 ttn_app_key = '<Your TTN App Key>'
@@ -246,6 +246,7 @@ heartbeat_counter = 0
 new_message_counter = 0
 next_command = 0
 charger_state = b'A1' # Set starting state to "Not Connected"
+use_S1_to test_commands = False # Set to true to use S1 to cycle through commands
 
 # disable LED heartbeat (so we can control the LED)
 pycom.heartbeat(False)
@@ -264,9 +265,12 @@ uart_flow = Pin('P8', mode=Pin.OUT) # Set up UART flow control. 0=receive, 1=sen
 uart_flow.value(0) # Set UART to receive
 comms_led = Pin('P9', mode=Pin.OUT) # Set up Comms LED. 0=On, 1=Off
 comms_led.value(1) # Set Comms LED to Off
-button = Pin('P10', mode=Pin.IN, pull=Pin.PULL_UP) #Set up S1 to cycle through command tests
-button.callback(Pin.IRQ_RISING, handler=send_control_command)
 
+if use_S1_to test_commands:
+    button = Pin('P10', mode=Pin.IN, pull=Pin.PULL_UP) #Set up S1 to cycle through command tests
+    button.callback(Pin.IRQ_RISING, handler=send_control_command)
+else:
+    print("S1 Disabled")
 
 # Find Charger Device ID
 print("Finding Charger Device ID")
