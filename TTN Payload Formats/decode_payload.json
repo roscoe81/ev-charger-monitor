@@ -16,7 +16,7 @@ function Decoder(bytes, port) {
   }  else if (raw_state === "E2") {
     state = "E2 Mode";
   }  else if (raw_state === "E0") {
-    state = "Outlet Locked";
+    state = "Disabled";
   }  else if (raw_state === "AA") {
     state = "Lock Outlet ACK";
   }  else if (raw_state === "BB") {
