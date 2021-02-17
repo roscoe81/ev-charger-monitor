@@ -229,7 +229,7 @@ def send_control_command(arg): # Used to test handling of received commands
     uart_flow.value(0) # Set UART to receive
     comms_led.value(1)
 
-print("Northcliff EV Charger Monitor Gen V1.6")
+print("Northcliff EV Charger Monitor Gen V1.7")
 # Set up TTN Access
 ttn_app_eui = '<Your TTN App EUI>'
 ttn_app_key = '<Your TTN App Key>'
@@ -304,7 +304,7 @@ if message_valid:
                         else:
                             remaining_cycles = 20 - new_message_counter
                         print("Cycles until Message Capture:", remaining_cycles)
-                elif (charger_state == b'B1' and heartbeat_counter >= 300 or charger_state == b'A1' and heartbeat_counter >= 1440 or
+                elif (charger_state == b'B1' and heartbeat_counter >= 300 or charger_state == b'A1' and heartbeat_counter >= 1600 or
                 charger_state == b'B2' and heartbeat_counter >= 1800 or (charger_state == b'C2' or charger_state == b'E0') and heartbeat_counter >= 900  or
                 charger_state != b'B1' and charger_state != b'A1' and charger_state != b'B2' and charger_state != b'C2' and charger_state != b'E0' and heartbeat_counter >= 3600):
                     # Process old messages every 5 minutes if in "Connected and Locked" state, every 2 hours for "Not Connected" state, every 30 minutes for "Charged" state,
@@ -318,7 +318,7 @@ if message_valid:
                     if charger_state == b'B1':
                         remaining_cycles = 300 - heartbeat_counter
                     elif charger_state == b'A1':
-                        remaining_cycles = 1440 - heartbeat_counter
+                        remaining_cycles = 1600 - heartbeat_counter
                     elif charger_state == b'B2':
                         remaining_cycles = 1800 - heartbeat_counter
                     elif charger_state == b'C2' or charger_state == b'E0':
