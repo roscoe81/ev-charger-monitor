@@ -25,6 +25,10 @@ The system can sense the following charger states:
 
 4. "Charged": The EV is charged to the required level. This state is normally triggered by the EV advising the charger.
 
+5. "Disabled": The charger has been set to "Lock Outlet" or "E0" mode and is disabled.
+
+6. "E2": Not currently used but allows for future maintenance activity enhancements (e.g. setting Device ID).
+
 The system has the following control functions (* See above note about command timing):
 
 1. "Reset Charger": It's found that this can be used to commence EV charging when the charger is in the "Connected and Locked" state - even if the charger's key switch is still in the locked state.
@@ -33,7 +37,7 @@ The system has the following control functions (* See above note about command t
 
 3. "Unlock Outlet": Takes the charger out of error mode
 
-ACKs are uplinked via TTN when each control command has been received.
+ACKs are uplinked via TTN when each control command has been received. There's the potential to add Status Report and Serial Number/Device Type request commands in the future.
 
 The charger states can be monitored and charger commands can be sent by using the Apple Home [App](https://github.com/roscoe81/ev-charger-monitor/blob/main/Photos/IMG_5273.PNG) and [Home Manager](https://github.com/roscoe81/Home-Manager). They can also be used to schedule charging using an Apple Home App Automation.
 
